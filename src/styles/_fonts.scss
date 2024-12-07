@@ -14,7 +14,21 @@
 
 @font-face {
   font-family: 'ZillaSlab';
-  src: url('../assets/fonts/ZillaSlab.ttf') format('truetype');
+  src: url('../a./assets/fonts/ZillaSlab.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZillaSlab-Medium';
+  src: url('../a./assets/fonts/ZillaSlab-Medium.ttf') format('truetype');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZillaSlab-MediumItalic';
+  src: url('../a./assets/fonts/ZillaSlab-MediumItalic.ttf') format('truetype');
+  font-weight: medium;
+  font-style: italic;
 }
