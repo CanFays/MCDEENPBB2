@@ -1,0 +1,17 @@
+@use "colors";
+
+.green-layout {
+  background-color: colors.$light-green;
+  color: colors.$whitish;
+  width: 100%;
+}
+
+.pink-layout {
+  background-color: colors.$pink;
+  width: 100%;
+}
+
+.white-layout {
+  background-color: colors.$whitish;
+  width: 100%;
+}

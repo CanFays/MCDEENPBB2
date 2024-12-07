@@ -1,12 +1,8 @@
-import React from 'react';
-
 function Disclaimer () {
   return  (
-
-      <pages className="disclaimer">
+    <pages className="disclaimer">
       Mentions légales
-      </pages>
-
+    </pages>
   );
 }
 

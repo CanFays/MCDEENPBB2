@@ -6,14 +6,20 @@ import GWP from '../assets/icons/GWP.svg'
 import PGW from '../assets/icons/PGW.svg'
 import PWG from '../assets/icons/PWG.svg'
 import WPG from '../assets/icons/WPG.svg'
-
 // vérif si toutes use !!!
 
-function BgTransition(colors) {
+const imageMapping = {
+  GGG: GGG, GPW: GPW, GPWP: GPWP, GPWsoft: GPWsoft, GWP: GWP, PGW: PGW, PWG: PWG, WPG: WPG,
+};
+
+function BgTransition({ colors }) {
+  const imageSrc = imageMapping[colors];
+
   return (
     <section className="transition">
-      <img src={colors}
-      alt="Transition colorée"></img>
+      {imageSrc &&
+        <img src={imageSrc} alt="Transition colorée" style={{ width: '100%' }} />
+      }
     </section>
   )
 }

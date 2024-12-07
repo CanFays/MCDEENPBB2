@@ -4,7 +4,7 @@ import "./MyHeader.scss";
 
 function MyHeader() {
   return (
-    <header>
+    <header className="green-layout">
       header
     </header>
   );
