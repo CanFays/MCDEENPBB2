@@ -1,7 +1,22 @@
 import './Home.scss'
+import React from 'react';
 import BgTransition from "../components/BgTransition"
+import PartialGuestbook from '../components/PartialGuestbook';
+import PartialAlbum from "../components/PartialAlbum";
+import PartialInvitation from "../components/PartialInvitation";
+import PartialProgram from "../components/PartialProgram";
+import PartialSpeech from "../components/PartialSpeech";
 
-function Home() {
+function Home({ selectedPartial, handlePartialSection }) {
+
+  const partialComponents = {
+    Guestbook: "Livre d'or",
+    Invitation: 'Faire-Part',
+    Program: 'Programme',
+    Speech: 'Discours',
+    Album: 'Photos'
+  }
+
   return (
     <main className="home">
       <BgTransition colors="GWP" />
@@ -15,9 +30,30 @@ function Home() {
       <BgTransition colors="WPG" />
       <section className="home_honeycomb green-layout">
         <div>Honeycomb</div>
+
+            {Object.keys(partialComponents).map((key) => (
+              <button key={key} onClick={() => handlePartialSection(key)}>
+                {partialComponents[key]}
+              </button>
+            ))}
+
       </section>
-      <section className="home_partials">
-        <div>Section choisie</div>
+
+
+      <section className={selectedPartial ? 'home_partials' : 'd-none home_partials'}>
+
+        <BgTransition colors="GWP" />
+        <div className='pink-layout'>
+          <div>
+            {selectedPartial === "Guestbook" && <PartialGuestbook />}
+            {selectedPartial === "Program" && <PartialProgram />}
+            {selectedPartial === "Invitation" && <PartialInvitation />}
+            {selectedPartial === "Speech" && <PartialSpeech />}
+            {selectedPartial === "Album" && <PartialAlbum />}
+          </div>
+        </div>
+        <BgTransition colors="PWG" />
+
       </section>
 
     </main>

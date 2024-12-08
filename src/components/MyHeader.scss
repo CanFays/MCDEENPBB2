@@ -4,3 +4,10 @@ header {
   border-radius: 12px 12px 0 0;
   width: 100%;
 }
+
+nav ul {
+  list-style: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
