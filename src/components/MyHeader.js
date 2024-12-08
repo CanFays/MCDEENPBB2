@@ -1,15 +1,7 @@
 import "./MyHeader.scss";
 import Monogramme from '../assets/icons/SB.svg'
 
-function MyHeader( {handlePartialSection} ) {
-
-  const partialComponents = {
-    Guestbook: "Livre d'or",
-    Invitation: 'Faire-Part',
-    Program: 'Programme',
-    Speech: 'Discours',
-    Album: 'Photos'
-  }
+function MyHeader( {handlePartialSection, partialComponents } ) {
 
   return (
     <header className="green-layout">

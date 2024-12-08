@@ -15,13 +15,23 @@ function App() {
     setSelectedPartial(partialName);
   };
 
+  const partialComponents = {
+    Guestbook: "Livre d'or",
+    Invitation: 'Faire-Part',
+    Program: 'Programme',
+    Speech: 'Discours',
+    Album: 'Photos'
+  }
+
   return (
     <div className="App">
       <MyHeader
-        handlePartialSection={handlePartialSection} />
+        handlePartialSection={handlePartialSection}
+        partialComponents={partialComponents} />
       <Home
         handlePartialSection={handlePartialSection}
         selectedPartial={selectedPartial}
+        partialComponents={partialComponents}
       />
       <MyFooter/>
     </div>

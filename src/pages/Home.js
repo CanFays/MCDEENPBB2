@@ -7,15 +7,7 @@ import PartialInvitation from "../components/PartialInvitation";
 import PartialProgram from "../components/PartialProgram";
 import PartialSpeech from "../components/PartialSpeech";
 
-function Home({ selectedPartial, handlePartialSection }) {
-
-  const partialComponents = {
-    Guestbook: "Livre d'or",
-    Invitation: 'Faire-Part',
-    Program: 'Programme',
-    Speech: 'Discours',
-    Album: 'Photos'
-  }
+function Home({ selectedPartial, handlePartialSection, partialComponents }) {
 
   return (
     <main className="home">
