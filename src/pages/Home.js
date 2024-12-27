@@ -6,6 +6,7 @@ import PartialAlbum from "../components/PartialAlbum";
 import PartialInvitation from "../components/PartialInvitation";
 import PartialProgram from "../components/PartialProgram";
 import PartialSpeech from "../components/PartialSpeech";
+import Carousel from "../components/Carousel"
 
 function Home({ selectedPartial, handlePartialSection, partialComponents }) {
 
@@ -14,6 +15,8 @@ function Home({ selectedPartial, handlePartialSection, partialComponents }) {
       <BgTransition colors="GWP" />
       <section className='home_chrono pink-layout'>
         <div>Photos et chrono</div>
+        <div>test carousel :</div>
+        <Carousel itemsName="GB" />
       </section>
       <BgTransition colors="PGW" />
       <section className="home_thanks white-layout">
