@@ -1,45 +1,48 @@
-// import './Carousel.css';
+import './Carousel.scss';
 // import btnClose from '../assets/icons/CarouselClose.svg';
 // import btnPrev from '../assets/icons/CarouselPrev.svg';
 // import btnNext from '../assets/icons/CarouselNext.svg';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 function Carousel({itemsName}) {
-  console.log("itemsname", typeof itemsName);
 
   function importImages(itemsName) {
 
     const context = require.context("../assets/images", false, /\.(webp|png|jpg)$/);
-    const images = context.keys().filter((key) => key.includes(`./${itemsName}`));
-    console.log("dans carousel");
-    console.log("context", context.keys());
-    console.log("images ", images);
-
-  context.keys().forEach(key => {
-    console.log('clé:', key, 'contient itemname?', key.includes(`./${itemsName}`))
-  });
-
-    return images.map(context)    // chemins relatifs to URLs accessibles via Webpack
+    const filteredPaths = context.keys().filter((key) => key.includes(`./${itemsName}`));
+    const imagesWithIds = filteredPaths.map((key) => {
+      const match = key.match(/\d+/);
+      const id = match ? parseInt(match[0], 10) : null ;
+      return {
+        path: context(key),
+        id: id ,
+      }
+    });
+    console.log("images id", imagesWithIds);
+    return imagesWithIds
   }
-
-  //   const [currentId, setcurrentId] = useState(1);
-//   let currentComment = comments.find(item => item.id === currentId);
-
-//   function handlePrev() {
-//     setcurrentId(currentId === 1 ? comments.length : currentId - 1);
-//   }
-
-//   function handleNext() {
-//     setcurrentId(currentId === comments.length ? 1 : currentId + 1);
-//   }
 
   const images = importImages(itemsName)
 
+
+  //
+  // const [currentId, setcurrentId] = useState(1);
+  // let currentImage = images.find(item => item.id === currentId);
+
+//   function handlePrev() {
+//     setcurrentId(currentId === 1 ? images.length : currentId - 1);
+//   }
+
+//   function handleNext() {
+//     setcurrentId(currentId === images.length ? 1 : currentId + 1);
+//   }
+
+
   return (
     <>
-    {images.map((image, index) => (
+    {/* {images.map((image, index) => (
       <img key={index} src={image} alt={`Belle ${index}`}/>
-    ))}
+    ))} */}
     </>
 
     //     <div className='carousel'>
