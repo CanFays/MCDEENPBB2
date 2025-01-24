@@ -2,7 +2,6 @@ import './Carousel.scss';
 // import btnClose from '../assets/icons/CarouselClose.svg';
 // import btnPrev from '../assets/icons/CarouselPrev.svg';
 // import btnNext from '../assets/icons/CarouselNext.svg';
-import { useState } from 'react';
 
 function Carousel({itemsName}) {
 

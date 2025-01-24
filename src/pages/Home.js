@@ -50,7 +50,6 @@ function Home({ selectedPartial, handlePartialSection, partialComponents }) {
         <BgTransition colors="PWG" />
 
       </section>
-
     </main>
   );
 }
