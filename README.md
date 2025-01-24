@@ -1,4 +1,5 @@
-Site évènement - Mariage
+Site évènement - Mariage 
+// refonte en React.js de MCDEENPBB
 
 yarn
 React
